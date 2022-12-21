@@ -4,11 +4,11 @@ pipeline{
      
         stage('Preparation') {
         
-           when { triggeredBy 'TimerTrigger'
+           when { triggeredBy 'TimerTrigger'}
            steps {
                 sh 'echo "Hello I am in preparation stage"'
                  }
-                 }
+                
                }
  
             
