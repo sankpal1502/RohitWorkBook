@@ -19,7 +19,7 @@ pipeline{
            steps {
            
           // sh 'echo "currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size()"'
-          // sh 'echo "currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()"'
+             sh 'echo "currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()"'
         
                 sh 'echo "Hello I am in Build Stage"'
                 sh '''
