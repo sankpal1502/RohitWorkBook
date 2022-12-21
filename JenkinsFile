@@ -6,7 +6,9 @@ pipeline{
         
            when { 
            anyOf{
-           triggeredBy 'TimerTrigger'}
+           triggeredBy 'TimerTrigger'
+            triggeredBy 'ParameterizedTimerTriggerCause'
+                }
                 }
            steps {
                 sh 'echo "Hello I am in preparation stage"'
