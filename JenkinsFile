@@ -3,14 +3,6 @@ pipeline{
      stages {
      
         stage('Preparation') {
-        echo "currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size()"
-        echo "$isTriggeredByCommit"
-       
-        echo "currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause').size()"
-        echo "$isTriggeredByUser"
-        
-        echo "currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()"
-        echo "$isTriggeredByTimer"
         
            when { 
            anyOf{
@@ -25,6 +17,14 @@ pipeline{
             
         stage('Build') {
            steps {
+           echo "currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size()"
+        echo "$isTriggeredByCommit"
+       
+        echo "currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause').size()"
+        echo "$isTriggeredByUser"
+        
+        echo "currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()"
+        echo "$isTriggeredByTimer"
                 sh 'echo "Hello I am in Build Stage"'
                 sh '''
                     echo "Multiline shell steps works too"
