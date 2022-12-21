@@ -3,13 +3,13 @@ pipeline{
      stages {
      
         stage('Preparation') {
-        def isTriggeredByCommit = currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size();
+        echo "currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size()"
         echo "$isTriggeredByCommit"
        
-        def isTriggeredByUser = currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause').size();
+        echo "currentBuild.getBuildCauses('hudson.model.Cause$UserIdCause').size()"
         echo "$isTriggeredByUser"
         
-        def isTriggeredByTimer = currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size();
+        echo "currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()"
         echo "$isTriggeredByTimer"
         
            when { 
