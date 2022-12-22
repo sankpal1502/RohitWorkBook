@@ -21,7 +21,7 @@ pipeline{
            steps {
         
                 script{
-                      build job: 'JenkinsChildFile'
+                      build job: 'Demo'
                       }
                 sh 'echo "Hello I am in Build Stage"'
                 sh '''
