@@ -1,0 +1,14 @@
+pipeline{
+
+     agent any
+     stages {
+     
+        stage('Preparation') {
+        
+           steps {
+                sh 'echo "Hello I am in preparation stage of child job"'
+                 }
+                
+       }
+     }
+   }
