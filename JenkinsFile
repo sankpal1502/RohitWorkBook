@@ -21,8 +21,7 @@ pipeline{
            steps {
         
                 script{
-                      build job: 'JenkinsChildFile',
-                      }
+                      build job: 'JenkinsChildFile',}
                 sh 'echo "Hello I am in Build Stage"'
                 sh '''
                     echo "Multiline shell steps works too"
