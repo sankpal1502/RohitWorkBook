@@ -19,10 +19,10 @@ pipeline{
             
         stage('Build') {
            steps {
-           
-          // sh 'echo "currentBuild.getBuildCauses('com.cloudbees.jenkins.GitHubPushCause').size()"'
-          // sh 'echo "${currentBuild.getBuildCauses('hudson.triggers.TimerTrigger$TimerTriggerCause').size()}"'
         
+                script{
+                      build job: 'JenkinsChildFile',
+                      }
                 sh 'echo "Hello I am in Build Stage"'
                 sh '''
                     echo "Multiline shell steps works too"
@@ -30,6 +30,8 @@ pipeline{
                     '''
                  }
                }
-            }
+               
+               
+       }
     }
             
